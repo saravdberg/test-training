@@ -26,9 +26,6 @@ jobs:
       - run:
           command: npm run build
           name: Build app
-      - run:
-          command: npm run build-storybook
-          name: Build Storybook
   e2e:
     executor: pw-jammy-development
     steps:
