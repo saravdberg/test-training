@@ -19,5 +19,6 @@ export default defineConfig({
         '100': true,
       },
     },
+    include: ['src/**/*.spec.ts?(x)'],
   },
 });
