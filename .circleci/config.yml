@@ -40,7 +40,7 @@ jobs:
   deploy:
     executor: node/default
     steps:
-     - checkout
+      - checkout
       - node/install:
           node-version: '20.11'
       - node/install-packages:
