@@ -49,7 +49,6 @@ jobs:
           command: npm run netlify build
           name: Build for Netlify
       - run:
-          command: echo "Deploy placeholder"
           command: npm run netlify deploy -- --prod --auth=$NETLIFY_AUTH_TOKEN --site=$NETLIFY_SITE_ID
           name: Deploy on Netlify
 workflows:
@@ -63,4 +62,4 @@ workflows:
             - e2e
           filters:
             branches:
-              only: master
+              only: main
