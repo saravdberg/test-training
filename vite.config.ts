@@ -1,3 +1,4 @@
+import { configDefaults } from 'vitest/config';
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
@@ -8,6 +9,15 @@ export default defineConfig({
     environment: 'jsdom',
     globals: true,
     setupFiles: ['./vitest-setup.ts'],
-    coverage: { provider: 'v8' },
+    coverage: {
+      all: true,
+      include: ['src/*.ts', 'src/*.tsx'],
+      exclude: [...configDefaults.exclude, 'src/main.tsx', 'src/*.d.ts'],
+      provider: 'v8',
+      reporter: ['html', 'text'],
+      thresholds: {
+        '100': true,
+      },
+    },
   },
 });
